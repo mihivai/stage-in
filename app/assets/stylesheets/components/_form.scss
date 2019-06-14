@@ -1,7 +1,12 @@
 .form-control {
   height: $input-height;
 }
-
+.form-shadow {
+  background-color: white;
+  padding: 30px;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px grey;
+}
 /* SEARCH FORM WITH BUTTON */
 .form-fake-wrap {
   position: relative;

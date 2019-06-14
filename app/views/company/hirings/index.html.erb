@@ -4,14 +4,19 @@
   <h5 class="margin-top-big">Ajouter des places de stage dans votre entreprise:</h5>
 
   <%= simple_form_for :hiring, url: company_hirings_path, method: :post do |f| %>
-    <div class="inline-form-wrapper">
-      <%= f.input :internship_id, label: "Etablissement & Période concernés",class: "input-numeric" do %>
+    <div class="inline-form-wrapper form-shadow">
+      <%= f.input :internship_id, label: "#{image_tag 'search_school.svg', height: '50px'} Etablissement & Période concernés".html_safe,class: "input-numeric" do %>
           <%= f.select :internship_id, Internship.display_internship, include_blank: true %>
       <% end %>
-      <%= f.input :number, label: "Nombre de place", collection: 1..40, class: "input-numeric" %>
+      <%= f.input :number, label: "#{image_tag 'student_numbers.svg', height: '50px'}Nombre de place".html_safe, collection: 1..40, class: "input-numeric" %>
       <%= f.button :submit, "Créer", class: "btn btn-slim btn-blue btn-inline-form" %>
     </div>
   <% end %>
+
+  <div class="text-center">
+    <%= image_tag 'documents.svg', height: '100px' %>
+  </div>
+
 
   <h5><%= @hirings.present? ? "Places de stage mises en ligne:" : "" %></h5>
 
