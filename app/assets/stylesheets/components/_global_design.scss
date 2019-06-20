@@ -1,5 +1,20 @@
+.bg-white {
+  background: white;
+}
+.border-left-pink-5px {
+  border-left: 5px $pink solid
+}
+.color-black {
+  color: black;
+}
 .flex-wrap {
   flex-wrap: wrap;
+}
+.d-none {
+  display: none;
+}
+.flex-column {
+  flex-direction: column;
 }
 .hiring_state.state_accepted::after {
   content: "Accepté";
@@ -17,4 +32,42 @@
   padding: 5px 15px;
   border-radius: 5px;
   color: white;
+}
+.margin-bottom-10px {
+  margin-bottom: 10px;
+}
+.margin-left-10px {
+  margin-left: 10px;
+}
+.margin-top-20px {
+  margin-top: 20px;
+}
+.margin-top-40px {
+  margin-top: 40px;
+}
+.paddingy-10px {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.padding-20px {
+  padding: 20px
+}
+.padding-left-20px {
+  padding-left: 20px;
+}
+.not-checked {
+  height: 30px;
+  width: 30px;
+  background-color: $light-gray;
+}
+.check-pink {
+  background-color: $pink;
+  color: white;
+  border-radius: 2px;
+  font-size: 20px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  justify-content: center;
 }
