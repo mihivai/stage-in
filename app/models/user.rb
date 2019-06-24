@@ -74,7 +74,7 @@ class User < ApplicationRecord
     Gmaps4rails.build_markers(users) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
-      self.role == 'company' ? marker.infowindow(user.company) : marker.infowindow(user.college_name)
+      user.role == 'company' ? marker.infowindow(user.company) : marker.infowindow(user.college_name)
       marker.picture({
         url: user.marker_picture(self),
         width: 32,
