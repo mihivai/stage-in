@@ -70,11 +70,11 @@ class User < ApplicationRecord
     .not(latitude: nil, longitude: nil)
   end
 
-  def gmap_hash(users)
-    Gmaps4rails.build_markers(users) do |user, marker|
+  def gmap_hash(user)
+    Gmaps4rails.build_markers(user) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
-      marker.infowindow user.company
+      self.role == 'company' ? marker.infowindow(user.company) : marker.infowindow(user.college_name)
       marker.picture({
         url: user.marker_picture(self),
         width: 32,
@@ -85,9 +85,9 @@ class User < ApplicationRecord
 
   def marker_picture(current_user)
     host = "http://res.cloudinary.com/zanzibar/image/upload/"
-    if self.distance_to(current_user) < 5
+    if self.role == 'company'
       host + "v1506266970/GREEN_hkaart.png"
-    elsif self.distance_to(current_user) < 10
+    elsif self.role == 'college'
       host + "v1506266970/ORANGE_fmuvmg.png"
     else
       host + "v1506266970/RED_onahwf.png"
