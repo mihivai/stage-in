@@ -24,7 +24,7 @@
       <% @student_hirings.each do |student_hiring| %>
         <div class="col-xs-12 col-sm-4">
           <!-- UPDATER IMAGE -->
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path student_hiring.hiring.company.skill.photo.path %>');">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path student_hiring.hiring.company.skill.image %>');">
             <div class="card-category"><%= student_hiring.hiring.company.full_address.gsub(/\d/, '') if student_hiring.hiring.company %></div>
             <div class="card-description">
               <h2><%= student_hiring.hiring.company.company if student_hiring.hiring.company %></h2>
@@ -44,7 +44,7 @@
         <% hirings.each do |hiring| %>
           <div class="col-xs-12 col-sm-4">
             <!-- UPDATER IMAGE -->
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hiring.company.skill.photo.path %>');">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path hiring.company.skill.image %>');">
               <div class="card-category"><%= hiring.company.full_address.gsub(/\d/, '') if hiring.company %></div>
               <div class="card-description">
                 <h2><%= hiring.company.company if hiring.company %></h2>

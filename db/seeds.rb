@@ -43,6 +43,7 @@ c3 = User.create!(
 
 puts "Colleges created"
 
+
 puts "Seeding User Student"
 
 User.create!(
@@ -66,53 +67,15 @@ puts "Student created"
 
 puts "Seeding Skills"
 
-# SKILLS = SECTEUR D'ACTIVITE
-
-url = "http://res.cloudinary.com/stage-in/image/upload/v1519578053/SA_artisanat_mvmrvr.jpg"
-Skill.create!(name: "Artisanat, Métiers du Batiment")
-Skill.last.photo_url = url
-puts "Création de la Skill #{Skill.last.name}"
-
-url = "http://res.cloudinary.com/stage-in/image/upload/v1519578054/SA_agriculture_b8up9i.jpg"
-Skill.create!(name: "Agriculture, Agroalimentaire")
-Skill.last.photo_url = url
-puts "Création de la Skill #{Skill.last.name}"
-
-url = "http://res.cloudinary.com/stage-in/image/upload/v1519578053/SA_assurance_ouojh5.jpg"
-Skill.create!(name: "Secrétariat, Comptabilité, Commerce")
-Skill.last.photo_url = url
-puts "Création de la Skill #{Skill.last.name}"
-
-url = "http://res.cloudinary.com/stage-in/image/upload/v1519578054/SA_commerce_s67fbz.jpg"
-Skill.create!(name: "Métiers de bouche, Hôtellerie, Restauration")
-Skill.last.photo_url = url
-puts "Création de la Skill #{Skill.last.name}"
-
-url = "http://res.cloudinary.com/stage-in/image/upload/v1519578053/SA_industry_abd7bg.jpg"
-Skill.create!(name: "Métiers de l’industrie et de la maintenance")
-Skill.last.photo_url = url
-puts "Création de la Skill #{Skill.last.name}"
-
-url = "http://res.cloudinary.com/stage-in/image/upload/v1519578053/SA_internet_ojzgiw.jpg"
-Skill.create!(name: "Métiers du numérique")
-Skill.last.photo_url = url
-puts "Création de la Skill #{Skill.last.name}"
-
-url = "http://res.cloudinary.com/stage-in/image/upload/v1519578053/SA_research_cns4mx.jpg"
-Skill.create!(name: "Métiers du Social, de la Santé, Service à la personne")
-Skill.last.photo_url = url
-puts "Création de la Skill #{Skill.last.name}"
-
-url = "http://res.cloudinary.com/stage-in/image/upload/v1519578054/SAtourisme_d6qtkw.jpg"
-Skill.create!(name: "Tourisme, Culture, Sport")
-Skill.last.photo_url = url
-puts "Création de la Skill #{Skill.last.name}"
-
-url = "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-Skill.create!(name: "Transport, logistique")
-Skill.last.photo_url = url
-puts "Création de la Skill #{Skill.last.name}"
-puts "Seeding internship..."
+Skill.create!(name: "Artisanat, Métiers du Batiment", image: 'artisanat.jpg')
+Skill.create!(name: "Agriculture, Agroalimentaire", image: 'agriculture.jpg')
+Skill.create!(name: "Secrétariat, Comptabilité, Commerce", image: 'commerce.jpg')
+Skill.create!(name: "Métiers de bouche, Hôtellerie, Restauration", image: 'restauration.jpg')
+Skill.create!(name: "Métiers de l’industrie et de la maintenance", image: 'industrie.jpg')
+Skill.create!(name: "Métiers du numérique", image: 'numerique.jpg')
+Skill.create!(name: "Métiers du Social, de la Santé, Service à la personne", image: 'social.jpg')
+Skill.create!(name: "Tourisme, Culture, Sport", image: 'tourisme.jpg')
+Skill.create!(name: "Transport, logistique", image: 'transport.jpg')
 
 puts "Skills created"
 
@@ -142,6 +105,7 @@ is = Internship.new(
 is.save!
 
 puts "Internships created"
+
 
 puts "Seeding User Companies & Hirings"
 
@@ -174,6 +138,7 @@ csv_companies.each do |row|
 end
 
 puts "Companies & Hirings created"
+
 
 puts "Seeding objectives"
 
