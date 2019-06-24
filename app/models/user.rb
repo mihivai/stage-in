@@ -81,8 +81,8 @@ class User < ApplicationRecord
       end
       marker.picture({
         url: user.marker_picture(self),
-        width: 70,
-        height: 70,
+        width: 32,
+        height: 32,
         })
     end
   end
