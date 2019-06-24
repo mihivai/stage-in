@@ -70,8 +70,8 @@ class User < ApplicationRecord
     .not(latitude: nil, longitude: nil)
   end
 
-  def gmap_hash(user)
-    Gmaps4rails.build_markers(user) do |user, marker|
+  def gmap_hash(users)
+    Gmaps4rails.build_markers(users) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
       self.role == 'company' ? marker.infowindow(user.company) : marker.infowindow(user.college_name)
