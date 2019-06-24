@@ -74,23 +74,27 @@ class User < ApplicationRecord
     Gmaps4rails.build_markers(users) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
-      user.role == 'company' ? marker.infowindow(user.company) : marker.infowindow(user.college_name)
+      if user.role == 'company'
+        marker.infowindow(user.company)
+      else
+        marker.infowindow(user.college_name)
+      end
       marker.picture({
         url: user.marker_picture(self),
-        width: 32,
-        height: 32,
+        width: 70,
+        height: 70,
         })
     end
   end
 
   def marker_picture(current_user)
-    host = "http://res.cloudinary.com/zanzibar/image/upload/"
+    host = "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=" #A|007FFF|000000"
     if self.role == 'company'
-      host + "v1506266970/GREEN_hkaart.png"
+      host + "|08D9D6|000000"
     elsif self.role == 'college'
-      host + "v1506266970/ORANGE_fmuvmg.png"
+      host + "|FF2E63|000000"
     else
-      host + "v1506266970/RED_onahwf.png"
+      host + "|00FF00|000000"
     end
   end
 
