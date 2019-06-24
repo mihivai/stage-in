@@ -1,10 +1,11 @@
 .list-wrapper {
   padding: 20px;
   width: 100%;
-  border: 1px solid $dark-gray;
-  border-radius: $border-radius;
+  background-color: white;
+  box-shadow: 0 5px 10px rgba(126,87,88,.1), 0 5px 5px rgba(0,0,0,.07);;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
   margin-bottom: 10px;
-  box-shadow: $shadow;
   display: flex;
   justify-content: space-between;
   p {

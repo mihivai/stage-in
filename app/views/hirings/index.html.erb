@@ -15,11 +15,16 @@
     });
   </script>
 <% end %>
+<div class="bg-blue shadow margin-bottom-20px">
+  <div class="container">
+    <h1 class= "text-center" style="font-size: 28px;font-weight:500;color:white;margin-top: 10px;margin-bottom: 10px">Liste des <span class="">entreprises</span> qui correspondent à vos <span class="">centres d'intérêt</span> :</h1>
+  </div>
+</div>
 
 <div class="container hirings-container">
-  <h1>Liste des entreprises qui correspondent à vos centres d'intérêt :</h1>
+  <!-- <h1>Liste des entreprises qui correspondent à vos centres d'intérêt :</h1> -->
   <% if @student_hirings.present? %>
-    <h3><i class="fa fa-star"></i> Vos demandes de stages</h3>
+    <h3><%= image_tag 'boxes.svg', height: '60px' %> Vos demandes de stages</h3>
     <div class="row">
       <% @student_hirings.each do |student_hiring| %>
         <div class="col-xs-12 col-sm-4">
@@ -39,7 +44,7 @@
   <% end %>
   <% if @hirings.present? %>
     <% @hirings.each do |score, hirings| %>
-      <h3><i class="fa fa-star"></i> Stages qui devraient vous plaire "<%= StudentSkill.score_names[score]%>"</h3>
+      <h3><%= image_tag StudentSkill.img_score_names[score], height: '60px' %> Stages qui devraient vous plaire "<%= StudentSkill.score_names[score]%>"</h3>
       <div class="row">
         <% hirings.each do |hiring| %>
           <div class="col-xs-12 col-sm-4">

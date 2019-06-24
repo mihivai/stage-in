@@ -1,5 +1,14 @@
+.border-b-blue {
+  border-bottom: 1px solid $blue;
+}
 .bg-white {
-  background: white;
+  background-color: white;
+}
+.bg-blue {
+  background-color: $blue;
+}
+.bg-pink {
+  background-color: $pink;
 }
 .border-left-pink-5px {
   border-left: 5px $pink solid
@@ -44,6 +53,13 @@
 }
 .margin-bottom-10px {
   margin-bottom: 10px;
+}
+.margin-bottom-20px {
+  margin-bottom: 20px;
+}
+.marginx-10px {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .margin-left-10px {
   margin-left: 10px;
@@ -94,11 +110,13 @@
 .fake-btn-slim.btn-gray {
   background-color: $dark-gray !important;
 }
+.shadow {
+  box-shadow: 0 5px 10px rgba(126,87,88,.1), 0 5px 5px rgba(0,0,0,.07);
+}
 .width-100 {
   width: 100%;
 }
-.width-200px-min-40 {
+.width-40-min-230px {
   width: 40%;
-  min-width: 200px;
+  min-width: 230px;
 }
-

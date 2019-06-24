@@ -1,9 +1,9 @@
 <div class="full-height under-navbar checklist-wrapper flex-column padding-box" style="background-image: linear-gradient(60deg, rgba(255,255,255,0.3), rgba(255,255,255,0.2)), url(<%= image_path 'stagein_company.jpg' %>)">
-  <div class="flexbox full-width checklist-container">
-    <div class="width-200px-min-40 padding-20px">
+  <div class="flexbox flex-wrap full-width checklist-container">
+    <div class="width-40-min-230px marginx-10px">
       <%= render "shared/hiring" %>
     </div>
-    <div class="width-200px-min-40 padding-20px flexbox">
+    <div class="width-40-min-230px marginx-10px flexbox">
       <% if @step_checked %>
         <div class="text-center margin-top-40px">
           <button class="btn-blue-rectangle" id= "btn-postuler">Je postule</button>

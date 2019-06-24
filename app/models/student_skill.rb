@@ -15,4 +15,12 @@ class StudentSkill < ApplicationRecord
     ]
   end
 
+  def self.img_score_names
+    [
+      "sad.svg",
+      "feel_normal.svg",
+      "joy.svg",
+      "love.svg"
+    ]
+  end
 end
