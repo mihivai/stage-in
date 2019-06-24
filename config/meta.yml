@@ -5,7 +5,7 @@ meta_image: "paysribeccois.png" # should exist in `app/assets/images/`
 twitter_account: ''  # required for Twitter Cards
 meta_keywords: "Stage-In, Stage, Entreprise"
 meta_logo: "stagein_logo.png" # should exist in `app/assets/images/`
-meta-url: "https://stage-in.herokuapp.com/"
+meta-url: "www.stage-in.fr/"
 meta-url-fb: ''
 meta-url-instagram: ''
 meta-url-linkedin: ''
