@@ -1,11 +1,12 @@
-<div >
+<div class="margin-top-20px">
   <%= link_to hc, method: :put, id: "checked-#{hc.id}" do%>
-    <% if hc.checked? %>
-        <p class="checkpoint checked"><%= hc.checkpoint.title %>
-        <i class="fa fa-thumbs-o-up"></i></p>
-    <% else %>
-        <p class="checkpoint"><%= hc.checkpoint.title %>
-        <i class="fa fa-thumbs-o-up"></i> </p>
-    <% end %>
+    <div class="flex-line padding-left-20px">
+      <div class="color-black width-100"><%= hc.checkpoint.title.html_safe %></div>
+      <% if hc.checked? %>
+          <p class="margin-left-10px"><i class="fas fa-check check-pink"></i></p>
+      <% else %>
+          <div class="not-checked margin-left-10px margin-bottom-10px"></div>
+      <% end %>
+    </div>
   <% end %>
 </div>

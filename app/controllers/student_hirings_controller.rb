@@ -18,5 +18,6 @@ class StudentHiringsController < ApplicationController
     @hiring_checkpoints = @student_hiring.hiring_checkpoints
                                          .includes(:checkpoint)
                                          .order("checkpoints.order")
+    @step_checked = @hiring_checkpoints.find_by(checked: true).nil?
   end
 end

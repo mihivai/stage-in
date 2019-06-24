@@ -177,9 +177,9 @@ puts "Companies & Hirings created"
 
 puts "Seeding objectives"
 
-checkpoints = [ "Je me renseigne sur l'entreprise.",
-                "J'informe l'entreprise que je suis intéressé.",
-                "Je prend rendez-vous avec l'entreprise."
+checkpoints = [ "<p>Je me suis renseigné sur l'entreprise.</p>",
+                "<p class='margin-bottom-10px'>Je postule</p><p class='font-size-14px'>Valide cette étape pour récupérer par mail les coordonnées de l'entreprise</p>",
+                "<p>J'ai contacté l'entreprise et j'ai pris rendez vous.</p>"
               ]
 checkpoints.each_with_index do |title, i|
   Checkpoint.create!(title: title, order: i)
