@@ -7,14 +7,20 @@
 .color-black {
   color: black;
 }
-.flex-wrap {
-  flex-wrap: wrap;
-}
 .d-none {
   display: none;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .flex-column {
   flex-direction: column;
+}
+.font-size-14px {
+  font-size: 14px;
+}
+.font-size-16px {
+  font-size: 16px;
 }
 .hiring_state.state_accepted::after {
   content: "Accepté";
@@ -74,3 +80,25 @@
   height: 30px;
   justify-content: center;
 }
+.fake-btn-slim {
+  color: white;
+  background-color: $pink;
+  border-radius: 40px;
+  height: 40px;
+  border: none;
+  padding: 0px 30px;
+  &:hover {
+    cursor: initial;
+  }
+}
+.fake-btn-slim.btn-gray {
+  background-color: $dark-gray !important;
+}
+.width-100 {
+  width: 100%;
+}
+.width-200px-min-40 {
+  width: 40%;
+  min-width: 200px;
+}
+

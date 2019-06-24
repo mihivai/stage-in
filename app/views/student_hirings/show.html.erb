@@ -1,10 +1,14 @@
 <div class="full-height under-navbar checklist-wrapper flex-column padding-box" style="background-image: linear-gradient(60deg, rgba(255,255,255,0.3), rgba(255,255,255,0.2)), url(<%= image_path 'stagein_company.jpg' %>)">
-  <div class="row full-width checklist-container">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 col-lg-offset-1 margin-top-20px">
+  <div class="flexbox full-width checklist-container">
+    <div class="width-200px-min-40 padding-20px">
       <%= render "shared/hiring" %>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5">
-      <%#= cl_image_tag @hiring.company.skill.photo.path, width: '100%',id: "skill-photo" %>
+    <div class="width-200px-min-40 padding-20px flexbox">
+      <% if @step_checked %>
+        <div class="text-center margin-top-40px">
+          <button class="btn-blue-rectangle" id= "btn-postuler">Je postule</button>
+        </div>
+      <% end %>
       <div id="step-container" class="<%= "d-none" if  @step_checked  %>">
         <p class="padding-left-20px margin-bottom-0px">Valide chaque étapes et obtiens ton stage !</p>
         <div class="border-left-pink-5px paddingy-10px">
@@ -19,19 +23,15 @@
       </div>
     </div>
   </div>
-  <%= link_to 'Revenir aux stages disponibles', hirings_path, class: 'btn-grey' %>
+  <%= link_to 'Revenir aux stages disponibles', hirings_path, class: 'btn-grey margin-top-20px' %>
 </div>
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $('#btn-postuler').on('click', function(e) {
-
-    <!-- $('#skill-photo').hide(); -->
     $('#step-container').show();
     $('#btn-postuler').hide();
 
   });
   <% end %>
 <% end %>
-
-
