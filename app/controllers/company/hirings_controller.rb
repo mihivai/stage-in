@@ -1,4 +1,5 @@
 class Company::HiringsController < ApplicationController
+  before_action :check_access
   def index
     @hirings = current_user.company_hirings.where(visible: true)
     @company_name = current_user.company
@@ -29,6 +30,10 @@ class Company::HiringsController < ApplicationController
   end
 
   private
+
+  def check_access
+    redirect_to root_path unless current_user.role == "company"
+  end
 
   def hiring_params
     params.require(:hiring).permit(:job_id, :internship_id, :number, :visible)
