@@ -4,8 +4,8 @@ class HiringsController < ApplicationController
     begin
       @hirings = Hiring.visibles
                        .not_accepteds
-                       .not_denieds_for(a)
-                       .group_by_score(a)
+                       .not_denieds_for(current_user)
+                       .group_by_score(current_user)
     rescue
       @hirings = { 3 => Hiring.college_filter(current_user) }
     end
