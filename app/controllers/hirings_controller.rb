@@ -1,17 +1,16 @@
 class HiringsController < ApplicationController
-  before_action :check_access
+  before_action :student_access
   def index
     begin
       @hirings = Hiring.visibles
                        .not_accepteds
-                       .not_denieds_for(current_user)
-                       .group_by_score(current_user)
+                       .not_denieds_for(a)
+                       .group_by_score(a)
     rescue
       @hirings = { 3 => Hiring.college_filter(current_user) }
     end
 
     @student_hirings = current_user.student_hirings.order(:state).where.not(state: 0)
-
     @companies = @hirings.values.flatten.flatten.map { |hiring| hiring.company }.select { |company| !company.latitude.nil? }
 
     # Creating Markers
@@ -24,7 +23,4 @@ class HiringsController < ApplicationController
     @hiring = Hiring.find(params[:id])
   end
 
-  def check_access
-    redirect_to root_path unless current_user.role == "student"
-  end
 end

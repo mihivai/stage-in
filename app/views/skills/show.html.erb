@@ -7,6 +7,11 @@
   </div>
   <div class="flex-vertical-center skill-bottom-half">
     <div class="row full-width">
+      <%= link_to skill_student_skills_path(@skill, score: 0), method: :post do %>
+        <div class="col-md-3 col-lg-3 flexbox">
+          <p class="btn btn-slim btn-gray flexbox">Pas du tout</p>
+        </div>
+      <% end %>
       <%= link_to skill_student_skills_path(@skill, score: 1), method: :post do %>
         <div class="col-md-3 col-lg-3 flexbox">
           <p class="btn btn-slim btn-gray flexbox">Un peu</p>
@@ -20,11 +25,6 @@
       <%= link_to skill_student_skills_path(@skill, score: 3), method: :post do %>
         <div class="col-md-3 col-lg-3 flexbox ">
           <p class="btn btn-slim btn-gray flexbox">À la folie</p>
-        </div>
-      <% end %>
-      <%= link_to skill_student_skills_path(@skill, score: 0), method: :post do %>
-        <div class="col-md-3 col-lg-3 flexbox">
-          <p class="btn btn-slim btn-gray flexbox">Pas du tout</p>
         </div>
       <% end %>
     </div>
@@ -46,6 +46,11 @@
   </div>
   <div class="flex-vertical-center skill-answers">
     <div class="row">
+      <%= link_to skill_student_skills_path(@skill, score: 0), method: :post do %>
+        <div class="col-xs-12 text-center">
+          <p class="btn btn-slim btn-gray">Pas du tout</p>
+        </div>
+      <% end %>
       <%= link_to skill_student_skills_path(@skill, score: 1), method: :post do %>
         <div class="col-xs-12 text-center">
           <p class="btn btn-slim btn-gray">Un peu</p>
@@ -59,11 +64,6 @@
       <%= link_to skill_student_skills_path(@skill, score: 3), method: :post do %>
         <div class="col-xs-12 text-center ">
           <p class="btn btn-slim btn-gray">À la folie</p>
-        </div>
-      <% end %>
-      <%= link_to skill_student_skills_path(@skill, score: 0), method: :post do %>
-        <div class="col-xs-12 text-center">
-          <p class="btn btn-slim btn-gray">Pas du tout</p>
         </div>
       <% end %>
     </div>

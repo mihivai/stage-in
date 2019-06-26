@@ -68,6 +68,13 @@ class ApplicationController < ActionController::Base
     { host: ENV["DOMAIN"] || "localhost:3000" }
   end
 
+  def student_access
+    redirect_to root_path unless current_user.role == "student"
+  end
+
+  def company_access
+    redirect_to root_path unless current_user.role == "company"
+  end
   # def after_sign_in_path_for(resource)
   #   hirings_path
   # end
