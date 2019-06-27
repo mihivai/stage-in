@@ -120,23 +120,30 @@ puts "Skills created"
 puts "Seeding Internships"
 
 is = Internship.new(
-  starts_at: Date.new(2018, 12, 3),
-  ends_at: Date.new(2018, 12, 7),
-  comment: "Stage de 3ème 2018-2019",
+  starts_at: Date.new(2019, 12, 16),
+  ends_at: Date.new(2019, 12, 20),
+  comment: "Stage de 3ème 2019-2020",
   college: c1
   )
 is.save!
 is = Internship.new(
-  starts_at: Date.new(2018, 12, 17),
-  ends_at: Date.new(2018, 12, 21),
-  comment: "Stage de 3ème 2018-2019",
+  starts_at: Date.new(2019, 12, 2),
+  ends_at: Date.new(2019, 12, 6),
+  comment: "Stage de 3ème 2019-2020",
   college: c2
   )
 is.save!
 is = Internship.new(
-  starts_at: Date.new(2019, 01, 14),
-  ends_at: Date.new(2019, 01, 25),
-  comment: "Stage de 3ème 2018-2019",
+  starts_at: Date.new(2020, 01, 3),
+  ends_at: Date.new(2020, 01, 7),
+  comment: "Stage de 3ème 2019-2020",
+  college: c3
+  )
+is.save!
+is = Internship.new(
+  starts_at: Date.new(2020, 01, 20),
+  ends_at: Date.new(2020, 01, 24),
+  comment: "Stage de 3ème 2019-2020",
   college: c3
   )
 is.save!
