@@ -1,4 +1,5 @@
 class Company::HiringsController < ApplicationController
+  before_action :company_access
   def index
     @hirings = current_user.company_hirings.where(visible: true)
     @company_name = current_user.company

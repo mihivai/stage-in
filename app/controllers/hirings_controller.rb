@@ -1,4 +1,5 @@
 class HiringsController < ApplicationController
+  before_action :student_access
   def index
     begin
       @hirings = Hiring.visibles
@@ -10,7 +11,6 @@ class HiringsController < ApplicationController
     end
 
     @student_hirings = current_user.student_hirings.order(:state).where.not(state: 0)
-
     @companies = @hirings.values.flatten.flatten.map { |hiring| hiring.company }.select { |company| !company.latitude.nil? }
 
     # Creating Markers
@@ -22,4 +22,5 @@ class HiringsController < ApplicationController
   def show
     @hiring = Hiring.find(params[:id])
   end
+
 end
